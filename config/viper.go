@@ -8,10 +8,9 @@ import (
 func NewViper() *viper.Viper {
 	config := viper.New()
 
-	viper.SetConfigName("config")
-	viper.AutomaticEnv()
+	config.SetConfigFile(".env")
 
-	err = viper.ReadInConfig()
+	err := config.ReadInConfig()
 	if err != nil {
 		panic(fmt.Errorf("Fatal error config file: %w \n", err))
 	}
