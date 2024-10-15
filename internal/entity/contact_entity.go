@@ -7,8 +7,8 @@ type Contact struct {
 	Email     string `gorm:"column:email"`
 	Phone     string `gorm:"column:phone"`
 	UserId    string `gorm:"column:user_id"`
-	CreateAt  int64  `gorm:"column:create_at;autoCreateTime:milli"`
-	UpdateAt  int64  `gorm:"column:update_at;autoCreateTime:milli;autoUpdateTime:milli"`
+	CreateAt  int64  `gorm:"column:created_at;autoCreateTime:milli"`
+	UpdateAt  int64  `gorm:"column:updated_at;autoCreateTime:milli;autoUpdateTime:milli"`
 	User      User   `gorm:"foreignKey:user_id;reference:id"`
 }
 
